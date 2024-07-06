@@ -83,5 +83,10 @@ print(lr_accuracy) # 0.7453846153846154
 confmat = confusion_matrix(y_test,lr_prediction)
 print(confmat)
 
-sns.heatmap(confmat,annot=True, cmap='coolwarm')
+# Plotting the confusion matrix
+plt.figure(figsize=(8,6))
+sns.heatmap(confmat, annot=True, fmt='d', cmap='Blues')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix')
 plt.show()
